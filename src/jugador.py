@@ -1,6 +1,17 @@
 import random
-#choice()
-#La función choice(sec) devuelve un elemento aleatorio de una secuencia. Es muy útil cuando hay que elegir al azar un elemento de entre un conjunto
-turno_jugador= [ "red", "green", "yellow","blue"]
+
+
+# Lista de colores disponibles
+turno_jugador = ["red", "green", "yellow", "blue"]
+
+class Jugador:
+    def __init__(self, es_jugador=True) -> None:
+        self.es_jugador = es_jugador
+
+    def hacer_intento(self):
+       colores_disponibles = ["red", "green", "yellow", "blue"]
+       intento = []
+print("Ingresa tu intento de colores (red, green, yellow, blue).")
 for i in range(4):
- print(random.choice(turno_jugador))
+            color = input("Ingresa un color: ")
+            

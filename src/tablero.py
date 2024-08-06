@@ -1,5 +1,6 @@
 from colored import fg,attr
 
+
 class Tablero:
     colores = {
         "r": fg("red"),
@@ -43,4 +44,3 @@ class Tablero:
                 ])
                 
                 print(f"{fila_color} {fila_retroalimentacion}")
-            
