@@ -22,27 +22,28 @@ class Tablero:
         for i in range(4):# ocupamos comprobar iterar
                 if intento[i] == copia_color[i]:
                     retroalimentacion.append("color_verde")# se guarda en retroalimentacion y se comparan los datos
-                    copia_color[i]=None # para quitar la opcion que se reviso y continuar con la siguiente
                 elif intento[i] in copia_color:
                     retroalimentacion.append("color_amarillo")
-                    copia_color.remove(intento[i])# se elimina 
                 else: retroalimentacion.append("color_blanco")
         return retroalimentacion # retornamos la lista
     
     def mostrar(self): # se crea otro metodo
             for intento, retroalimentacion in self.turnos:
-                fila_color = " ".join([self.colores[color]+"🟠"+attr("reset")for color in intento])
+                fila_color = " ".join([self.colores[color]+"o"+attr("reset")for color in intento])
                 #join recorremos la lista de colores y el comprehension list
                 fila_retroalimentacion = " ".join([
-                    fg(2) + "🟠" + attr("reset") if adivina == "color_verde"
+                    fg(2) + "o" + attr("reset") if adivina == "color_verde"
                     
-                    else fg(3) + "🟠" + attr("reset") if adivina == "color_amarillo"
+                    else fg(3) + "o" + attr("reset") if adivina == "color_amarillo"
                     
-                    else "🟠"
+                    else "o"
                     
                     for adivina in retroalimentacion
                 ])
                 
-                print(f"{fila_color} {fila_retroalimentacion}")
+                print(f"{fila_color}|{fila_retroalimentacion}")
+                
+    def actualizar_tabla(self,intento,retroalimentacion):
+        self.turnos.append((intento,retroalimentacion))
                 
  

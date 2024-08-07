@@ -3,7 +3,7 @@ import random # se importa el random
 
 
 class Jugador:
-    colores_disponibles = ["red", "green", "yellow", "blue"]
+    colores_disponibles = ["r", "g", "y", "b"]
     def __init__(self, es_jugador=True) -> None:
         self.es_jugador = es_jugador
 # inicializamos el atributo con el estado de True 
@@ -12,7 +12,7 @@ class Jugador:
 class Adivinar(Jugador):# llamamos ala clase Jugador para saber quien inicia el juego
       def hacer_adivinanza(self):
           if self.es_jugador:
-              color_adivinar = input("Ingrese el color a adivinar: (red green yellow blue)").strip().split()
+              color_adivinar = input("Ingrese el color a adivinar: (r g y b)").strip().split()
               return color_adivinar 
           else:
               color_adivinar = random.choices(self.colores_disponibles,k=4)
@@ -22,7 +22,7 @@ class Adivinar(Jugador):# llamamos ala clase Jugador para saber quien inicia el 
 class Creador(Jugador):
       def hacer_creador(self):
           if self.es_jugador:
-              color_adivinar = input("Ingrese el color a crear: (red green yellow blue)").strip().split()
+              color_adivinar = input("Ingrese el color a crear: (r g y b)").strip().split()
               return color_adivinar
           else:
               color_crear = random.choices(self.colores_disponibles,k=4)
