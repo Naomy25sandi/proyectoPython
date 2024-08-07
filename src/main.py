@@ -4,8 +4,8 @@ from jugador import Adivinar, Creador # importo adivinar y creador del archivo j
  
 #
 class Juego:
-    def __init__(self) -> None: # constructor
-        self.tablero = Tablero()
+    def __init__(self) -> None: # constructor inicializo
+        self.tablero = Tablero() # 
         self.creador_codigo = None
         self.adivinador_codigo = None
         
@@ -23,12 +23,12 @@ class Juego:
         self.tablero.definir_color(self.creador_codigo.hacer_creador())
       
        
-    def jugadas_turnos(self):
+    def jugadas_turnos(self):# creo otro metodo
         for turnos in range(12):
             intento = self.adivinador_codigo.hacer_adivinanza()
             retroalimentacion = self.tablero.validar_ganador(intento)
-            self.tablero.actualizar_tablero(intento,retroalimentacion)
-            self.tablero.mostrar_tabla()
+            self.tablero.mostrar(intento,retroalimentacion)
+            self.tablero.mostrar()
             print(turnos)
             if retroalimentacion == ["color_verde"]*4:
                 print("WIN")
@@ -37,7 +37,7 @@ class Juego:
         print("LOSE")
 
     
-    def iniciar_juego(self):
+    def iniciar_juego(self):# creo otro metodo
         self.elegir_turno()
         self.jugadas_turnos()
 
@@ -45,4 +45,4 @@ class Juego:
 if __name__ == "__main__":
     juego = Juego()
     juego.iniciar_juego()
-            
+        

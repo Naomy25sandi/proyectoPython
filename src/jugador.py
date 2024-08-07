@@ -1,6 +1,6 @@
 import random # se importa el random
 # Lista de colores disponibles
-turno_jugador = ["red", "green", "yellow", "blue"]
+
 
 class Jugador:
     colores_disponibles = ["red", "green", "yellow", "blue"]
@@ -15,7 +15,7 @@ class Adivinar(Jugador):# llamamos ala clase Jugador para saber quien inicia el 
               color_adivinar = input("Ingrese el color a adivinar: (red green yellow blue)").strip().split()
               return color_adivinar 
           else:
-              color_adivinar = random.choices(self.turno_jugador,k=4)
+              color_adivinar = random.choices(self.colores_disponibles,k=4)
               return color_adivinar # usamos el random para dar una lista aleatoria de las opciones de los colores        
 
 
@@ -23,8 +23,8 @@ class Creador(Jugador):
       def hacer_creador(self):
           if self.es_jugador:
               color_adivinar = input("Ingrese el color a crear: (red green yellow blue)").strip().split()
-              return color_crear
+              return color_adivinar
           else:
-              color_crear = random.choices(turno_jugador,k=4)
+              color_crear = random.choices(self.colores_disponibles,k=4)
               return color_crear
   
