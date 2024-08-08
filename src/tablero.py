@@ -27,6 +27,7 @@ class Tablero:
                 else: retroalimentacion.append("color_blanco")
         return retroalimentacion # retornamos la lista
     
+    
     def mostrar(self): # se crea otro metodo
             for intento, retroalimentacion in self.turnos:
                 fila_color = " ".join([self.colores[color]+"o"+attr("reset")for color in intento])
