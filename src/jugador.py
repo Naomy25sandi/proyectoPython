@@ -27,4 +27,5 @@ class Creador(Jugador):
           else:
               color_crear = random.choices(self.colores_disponibles,k=4)
               return color_crear
+          
   
