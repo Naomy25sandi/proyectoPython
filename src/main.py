@@ -11,7 +11,7 @@ class Juego:
     
     # preguntamos y creamos un metodo
     def elegir_turno(self):# creamos una variable para el input, recibir la informacion
-        pregunta = input("Quieres ser el adivinador o el creador? c - a: ").lower().strip()
+        pregunta = input("Quieres ser el adivinador o el creador? c - a : ").lower().strip()
         if pregunta == "c":
             self.creador_codigo = Creador(True)# almaceno los atributos importados en estas variables
             self.adivinador_codigo= Adivinar(False)# dandoles un estado para poder verificar de quien es el turno
