@@ -44,6 +44,6 @@ class Tablero:
                 print(f"{fila_color}|{fila_retroalimentacion}")
                 
     def actualizar_tabla(self,intento,retroalimentacion):
-        self.turnos.append((intento,retroalimentacion))
+        self.turnos.append((intento,retroalimentacion))   
                 
  
